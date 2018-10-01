@@ -25,7 +25,7 @@ public class MetadataGeneratorKeysRollover extends MetadataGenerator {
 
             if (extendedMetadataKeysRollover.getRolloverKeys() != null) {
                 extendedMetadataKeysRollover.getRolloverKeys().forEach(((usageType, keyAlias) -> {
-                    log.info("Adding a new key (alias = {}) for {} to the metadata", keyAlias, usageType);
+                    log.debug("Adding a new key (alias = {}) for {} to the metadata", keyAlias, usageType);
                     spDescriptor.getKeyDescriptors().add(getKeyDescriptor(usageType, getServerKeyInfo(keyAlias)));
                 }));
             }

@@ -49,7 +49,7 @@ public class SAMLContextProviderKeysRolloverImpl extends SAMLContextProviderImpl
             if (extendedMetadataKeysRollover.getRolloverKeys() != null && extendedMetadataKeysRollover.getRolloverKeys().containsKey(UsageType.ENCRYPTION)) {
                 final String rolloverKeyAlias = extendedMetadataKeysRollover.getRolloverKeys().get(UsageType.ENCRYPTION);
 
-                log.info("Populating the Decrypter with a rollover encryption key (alias = {})", rolloverKeyAlias);
+                log.debug("Populating the Decrypter with a rollover encryption key (alias = {})", rolloverKeyAlias);
                 encryptionCredentials.add(keyManager.getCredential(rolloverKeyAlias));
             }
 
