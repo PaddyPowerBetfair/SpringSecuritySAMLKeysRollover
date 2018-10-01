@@ -10,7 +10,7 @@ An extension of Spring Security SAML Library 1.0.x to add support for keys rollo
 <dependency>
     <groupId>com.paddypowerbetfair.springframework</groupId>
     <artifactId>spring-security-saml-keys-rollover</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
