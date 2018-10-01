@@ -17,9 +17,9 @@
     </parent>
 
     <scm>
-        <connection>scm:git:git://gitlab.app.betfair/samuel.campos/SpringSecuritySAMLKeysRollover.git</connection>
-        <developerConnection>scm:git:git://gitlab.app.betfair/samuel.campos/SpringSecuritySAMLKeysRollover.git</developerConnection>
-        <url>https://gitlab.app.betfair/samuel.campos/SpringSecuritySAMLKeysRollover</url>
+        <connection>scm:git:git://gitlab.app.betfair/rtt/gitSpringSecuritySAMLKeysRollover.git</connection>
+        <developerConnection>scm:git:git://gitlab.app.betfair/rtt/SpringSecuritySAMLKeysRollover.git</developerConnection>
+        <url>https://gitlab.app.betfair/rtt/SpringSecuritySAMLKeysRollover</url>
         <tag>HEAD</tag>
     </scm>
 
