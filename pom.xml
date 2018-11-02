@@ -2,19 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.paddypowerbetfair.springframework</groupId>
+    <groupId>com.paddypowerbetfair</groupId>
     <artifactId>spring-security-saml-keys-rollover</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>Spring Security SAML Keys Rollover</name>
     <description>An extension of Spring Security SAML Library 1.0.x to add support for keys rollover</description>
+    <url>https://github.com/PaddyPowerBetfair/SpringSecuritySAMLKeysRollover</url>
 
     <scm>
         <connection>scm:git:git://github.com:PaddyPowerBetfair/SpringSecuritySAMLKeysRollover.git</connection>
         <developerConnection>scm:git:git@github.com:PaddyPowerBetfair/SpringSecuritySAMLKeysRollover.git</developerConnection>
         <url>https://github.com/PaddyPowerBetfair/SpringSecuritySAMLKeysRollover</url>
-        <tag>HEAD</tag>
+        <tag>spring-security-saml-keys-rollover-1.0.2</tag>
     </scm>
 
     <developers>
