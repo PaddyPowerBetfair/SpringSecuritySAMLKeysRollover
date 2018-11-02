@@ -10,16 +10,10 @@
     <name>Spring Security SAML Keys Rollover</name>
     <description>An extension of Spring Security SAML Library 1.0.x to add support for keys rollover</description>
 
-    <parent>
-        <groupId>com.betfair</groupId>
-        <artifactId>betfair-pom</artifactId>
-        <version>4.3</version>
-    </parent>
-
     <scm>
-        <connection>scm:git:git://gitlab.app.betfair/rtt/gitSpringSecuritySAMLKeysRollover.git</connection>
-        <developerConnection>scm:git:git://gitlab.app.betfair/rtt/SpringSecuritySAMLKeysRollover.git</developerConnection>
-        <url>https://gitlab.app.betfair/rtt/SpringSecuritySAMLKeysRollover</url>
+        <connection>scm:git:git://github.com:PaddyPowerBetfair/SpringSecuritySAMLKeysRollover.git</connection>
+        <developerConnection>scm:git:git@github.com:PaddyPowerBetfair/SpringSecuritySAMLKeysRollover.git</developerConnection>
+        <url>https://github.com/PaddyPowerBetfair/SpringSecuritySAMLKeysRollover</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -28,8 +22,16 @@
             <name>Samuel Campos</name>
             <email>samuel.campos@paddypowerbetfair.com</email>
             <organization>Paddy Power Betfair</organization>
+            <organizationUrl>https://www.paddypowerbetfair.com/</organizationUrl>
         </developer>
     </developers>
+
+    <licenses>
+        <license>
+            <name>BSD - The Sporting Exchange Limited</name>
+            <url>https://github.com/PaddyPowerBetfair/SpringSecuritySAMLKeysRollover/blob/master/LICENSE</url>
+        </license>
+    </licenses>
 
     <properties>
         <lombok.version>1.18.2</lombok.version>
@@ -125,33 +127,91 @@
                 </dependencies>
             </plugin>
             <!-- Spock Plugin Config end -->
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <source>${maven-compiler-plugin.source}</source>
+                    <target>${maven-compiler-plugin.target}</target>
+                    <encoding>${maven-compiler-plugin.encoding}</encoding>
+                </configuration>
+            </plugin>
         </plugins>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
-                    <inherited>true</inherited>
-                    <configuration>
-                        <source>${maven-compiler-plugin.source}</source>
-                        <target>${maven-compiler-plugin.target}</target>
-                        <encoding>${maven-compiler-plugin.encoding}</encoding>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>${maven-release-plugin.version}</version>
-                    <configuration>
-                        <goal>deploy</goal>
-                    </configuration>
-                </plugin>
-
-            </plugins>
-        </pluginManagement>
     </build>
 
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 </project>
