@@ -1,5 +1,8 @@
 # Spring Security SAML Keys Rollover
 
+[![Maven Central](https://img.shields.io/maven-central/v/com.paddypowerbetfair/spring-security-saml-keys-rollover.svg?style=plastic)](https://search.maven.org/artifact/com.paddypowerbetfair/spring-security-saml-keys-rollover/)
+
+
 An extension of [Spring Security SAML][SpringSecuritySAML] Library 1.0.x to add support for keys rollover.
 
 SAML 2.0 uses asymmetric cryptography to sign and encrypt messages that are sent between Service Providers (SPs) and Identity Providers (IdPs).
@@ -30,9 +33,9 @@ This dependency extends some [Spring Security SAML][SpringSecuritySAML] classes 
 
 ```xml
 <dependency>
-    <groupId>com.paddypowerbetfair.springframework</groupId>
+    <groupId>com.paddypowerbetfair</groupId>
     <artifactId>spring-security-saml-keys-rollover</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 

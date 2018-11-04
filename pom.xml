@@ -4,7 +4,7 @@
 
     <groupId>com.paddypowerbetfair</groupId>
     <artifactId>spring-security-saml-keys-rollover</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Spring Security SAML Keys Rollover</name>
