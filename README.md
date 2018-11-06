@@ -6,7 +6,7 @@
 An extension of [Spring Security SAML][SpringSecuritySAML] Library 1.0.x to add support for keys rollover.
 
 SAML 2.0 uses asymmetric cryptography to sign and encrypt messages that are sent between Service Providers (SPs) and Identity Providers (IdPs).
-Each SAML entity has, at least a key pair along with an X.509 certificate to be are distributed using the standard SAML XML metadata
+Each SAML entity has, at least a key pair along with an X.509 certificate to be distributed using the standard SAML XML metadata.
 When the certificates are about to expire, or due to security reasons, a key rollover must occur so that there's no service interruption.
 
 The general process of rolling over a key on a Service Provider without any service interruption is as follows:
