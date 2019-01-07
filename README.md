@@ -9,6 +9,9 @@ SAML 2.0 uses asymmetric cryptography to sign and encrypt messages that are sent
 Each SAML entity has, at least a key pair along with an X.509 certificate to be distributed using the standard SAML XML metadata.
 When the certificates are about to expire, or due to security reasons, a key rollover must occur so that there's no service interruption.
 
+We've written a [blog post explaining this problem in detail and why we needed this library extension][BlogPost].
+
+
 The general process of rolling over a key on a Service Provider without any service interruption is as follows:
 
 1. Create a new key pair for signing and/or encryption together with the respective X.509 certificate
@@ -106,3 +109,4 @@ This is released under a modified version of the BSD licence.
 Please see [LICENSE](LICENSE).
 
 [SpringSecuritySAML]: https://projects.spring.io/spring-security-saml/
+[BlogPost]: https://ppb.technology/2019/01/07/saml-2-0-sso-certificate-rollover/
