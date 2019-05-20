@@ -35,7 +35,7 @@
     </licenses>
 
     <properties>
-        <lombok.version>1.18.2</lombok.version>
+        <lombok.version>1.18.8</lombok.version>
         <spring.security.saml.version>1.0.3.RELEASE</spring.security.saml.version>
         <servlet.api.version>2.5</servlet.api.version>
         <spock.version>0.7-groovy-2.0</spock.version>
@@ -67,6 +67,8 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+            <!-- Lombok shouldn't become a dependency of the compiled jar -->
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
