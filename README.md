@@ -38,7 +38,7 @@ This dependency extends some [Spring Security SAML][SpringSecuritySAML] classes 
 <dependency>
     <groupId>com.paddypowerbetfair</groupId>
     <artifactId>spring-security-saml-keys-rollover</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 

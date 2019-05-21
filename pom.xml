@@ -4,7 +4,7 @@
 
     <groupId>com.paddypowerbetfair</groupId>
     <artifactId>spring-security-saml-keys-rollover</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>Spring Security SAML Keys Rollover</name>
@@ -15,7 +15,7 @@
         <connection>scm:git:git://github.com:PaddyPowerBetfair/SpringSecuritySAMLKeysRollover.git</connection>
         <developerConnection>scm:git:git@github.com:PaddyPowerBetfair/SpringSecuritySAMLKeysRollover.git</developerConnection>
         <url>https://github.com/PaddyPowerBetfair/SpringSecuritySAMLKeysRollover</url>
-        <tag>spring-security-saml-keys-rollover-1.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
